@@ -68,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(),
       body: isLoading
           ? const Center(
               child:
@@ -77,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(left: 16, right: 16, top: 15),
               child: Column(
                 children: [
+                  Header(),
                   SearchBarField(onSearchChanged: (value) {}),
                   // Filter section
                   FilterSection(),
