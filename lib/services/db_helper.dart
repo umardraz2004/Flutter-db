@@ -48,6 +48,12 @@ class DatabaseHelper {
     await db.insert('my_table', {'id': '2', 'text': 'text 2'});
     await db.insert('my_table', {'id': '3', 'text': 'text 3'});
     await db.insert('my_table', {'id': '4', 'text': 'text 4'});
+    await db.insert('my_table', {'id': '5', 'text': 'text 5'});
+    await db.insert('my_table', {'id': '6', 'text': 'text 6'});
+    await db.insert('my_table', {'id': '7', 'text': 'text 7'});
+    await db.insert('my_table', {'id': '8', 'text': 'text 8'});
+    await db.insert('my_table', {'id': '9', 'text': 'text 9'});
+    await db.insert('my_table', {'id': '10', 'text': 'text 10'});
   }
 
   // Manually run an insert function after initialization (when required)

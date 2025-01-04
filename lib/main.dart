@@ -72,26 +72,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ? const Center(
               child:
                   CircularProgressIndicator()) // Show loader while fetching data
-          : Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 15),
-              child: Column(
-                children: [
-                  Header(),
-                  SearchBarField(onSearchChanged: (value) {}),
-                  // Filter section
-                  FilterSection(),
-                  // Filter section end
-                  PendingTask(),
-                  TaskList(
-                    tasks: tasks,
-                    onTaskTapped: (task) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Tapped on $task')),
-                      );
-                    },
-                  ),
-                  Footer(),
-                ],
+          : SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, right: 16),
+                child: Column(
+                  children: [
+                    Header(),
+                    SearchBarField(onSearchChanged: (value) {}),
+                    // Filter section
+                    FilterSection(),
+                    // Filter section end
+                    PendingTask(),
+                    Expanded(
+                      child: TaskList(
+                        tasks: tasks,
+                        onTaskTapped: (task) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Tapped on $task')),
+                          );
+                        },
+                      ),
+                    ),
+                    Footer(),
+                  ],
+                ),
               ),
             ),
     );
